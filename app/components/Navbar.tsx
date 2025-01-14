@@ -7,6 +7,9 @@ const Navbar = () => {
   const [active, setActive] = useState("Home");
   const [toggle, setToggle] = useState(false);
 
+  // Define the image path dynamically
+  const logo = "/logo.png";  // Path to your logo image inside the public folder
+
   // Define the image paths for the menu and close icons
   const menu = "/menu.svg";  // Path to your 'menu' icon
   const close = "/close.svg"; // Path to your 'close' icon
@@ -15,11 +18,11 @@ const Navbar = () => {
     <nav className="text-white right-0 z-50 h-14 w-full flex py-6 px-8 fixed top-0 bg-transparent backdrop-blur-sm sm:py-4 justify-between items-center navbar">
       {/* Logo Image */}
       <Image
-        src="/logo.png"   // Path to your image in the public folder
-        alt="Logo"
-        width={60}        // Set a default width (this can be adjusted as needed)
-        height={6}        // Set a default height (this can be adjusted as needed)
-        className="object-contain" // Ensures the logo maintains its aspect ratio
+        src={logo}  // Use the logo path
+        alt="hoobank"  // Alt text for accessibility
+        width={64}    // Width of the logo
+        height={8}    // Height of the logo
+        className="object-contain"  // CSS class to maintain the aspect ratio
       />
 
       {/* Navigation Links */}

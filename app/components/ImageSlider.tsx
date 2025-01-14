@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import { useState, useEffect } from "react";
 import { useKeenSlider } from "keen-slider/react";
 import "keen-slider/keen-slider.min.css";
@@ -34,14 +34,14 @@ const ImageSlider: React.FC<ImageSliderProps> = ({ images }) => {
     }, 3000); // 3 seconds auto-slide
 
     return () => clearInterval(interval); // Clear interval when the component is unmounted or slide changes
-  }, []); // Empty dependency array ensures this runs only once
+  }, [instanceRef]); // Add instanceRef to the dependency array
 
   useEffect(() => {
     // Only trigger effect if instanceRef.current is valid
     if (instanceRef.current) {
       instanceRef.current.moveToIdx(currentSlide); // Navigate to the currentSlide index
     }
-  }, [currentSlide]); // Dependency on currentSlide, only re-run when currentSlide changes
+  }, [currentSlide, instanceRef]); // Add both currentSlide and instanceRef to the dependency array
 
   // Handle window resize to adjust the slider
   useEffect(() => {
@@ -57,13 +57,10 @@ const ImageSlider: React.FC<ImageSliderProps> = ({ images }) => {
     return () => {
       window.removeEventListener("resize", handleResize);
     };
-  }, []);
+  }, [instanceRef]); // Add instanceRef to the dependency array
 
   return (
-    <div
-      ref={sliderRef}
-      className="keen-slider relative w-full h-full"
-    >
+    <div ref={sliderRef} className="keen-slider relative w-full h-full">
       {/* Map through the images and create a slide for each */}
       {images.map((image, index) => (
         <div
@@ -74,13 +71,10 @@ const ImageSlider: React.FC<ImageSliderProps> = ({ images }) => {
             <Image
               src={image}
               alt={`Slide ${index + 1}`}
-              className="slider-image "
-
-              layout="responsive"
-              
-              width={1920}
-              height={1080}
-              priority // Optionally load images as priority for better performance
+              className="slider-image"
+              width={1920}    // Define width
+              height={1080}   // Define height
+              priority        // Optionally load images as priority for better performance
             />
           </div>
         </div>
@@ -114,5 +108,3 @@ const ImageSlider: React.FC<ImageSliderProps> = ({ images }) => {
 };
 
 export default ImageSlider;
-
-
