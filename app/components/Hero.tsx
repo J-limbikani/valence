@@ -84,7 +84,7 @@ const Hero: NextPage = () => {
           </Link>
 
           {/* Reach Us Button */}
-          <Link href="/about" passHref>
+          <Link href="/contact" passHref>
             <button
               className="py-3 px-5 font-poppins font-medium text-[18px] text-primary bg-blue-gradient rounded-[10px] outline-none transition-all duration-300 hover:bg-blue-600"
               aria-label="Reach Us"
