@@ -19,7 +19,7 @@ const Navbar = () => {
       {/* Logo Image */}
       <Image
         src={logo}  // Use the logo path
-        alt="hoobank"  // Alt text for accessibility
+        alt="valence"  // Alt text for accessibility
         width={64}    // Width of the logo
         height={8}    // Height of the logo
         className="object-contain"  // CSS class to maintain the aspect ratio
