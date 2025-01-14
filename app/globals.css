@@ -1,0 +1,292 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --black-gradient: linear-gradient(
+    144.39deg,
+    #ffffff -278.56%,
+    #6d6d6d -78.47%,
+    #11101d 91.61%
+  );
+  --card-shadow: 0px 20px 100px -10px rgba(66, 71, 91, 0.1);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --black-gradient: linear-gradient(
+    144.39deg,
+    #ffffff -278.56%,
+    #6d6d6d -78.47%,
+    #11101d 91.61%
+  );
+  --card-shadow: 0px 20px 100px -10px rgba(66, 71, 91, 0.1);
+}
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+{
+  scroll-behavior: smooth;
+}
+
+.text-gradient {
+  background: radial-gradient(
+    64.18% 64.18% at 71.16% 35.69%,
+    #def9fa 0.89%,
+    #bef3f5 17.23%,
+    #9dedf0 42.04%,
+    #7de7eb 55.12%,
+    #5ce1e6 71.54%,
+    #33bbcf 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+
+.bg-blue-gradient {
+  background: linear-gradient(
+    157.81deg,
+    #def9fa -43.27%,
+    #bef3f5 -21.24%,
+    #9dedf0 12.19%,
+    #7de7eb 29.82%,
+    #5ce1e6 51.94%,
+    #33bbcf 90.29%
+  );
+}
+
+.bg-black-gradient {
+  background: linear-gradient(
+    144.39deg,
+    #ffffff -278.56%,
+    #6d6d6d -78.47%,
+    #11101d 91.61%
+  );
+}
+
+.bg-black-gradient-2 {
+  background: linear-gradient(
+    -168.39deg,
+    #ffffff -278.56%,
+    #6d6d6d -78.47%,
+    #11101d 91.61%
+  );
+}
+
+.bg-gray-gradient {
+  background: linear-gradient(
+    153.47deg,
+    rgba(255, 255, 255, 0) -341.94%,
+    #14101d 95.11%
+  );
+}
+
+.bg-discount-gradient {
+  background: linear-gradient(125.17deg, #272727 0%, #11101d 100%);
+}
+
+.box-shadow {
+  box-shadow: 0px 20px 100px -10px rgba(66, 71, 91, 0.1);
+}
+
+.sidebar {
+  -webkit-animation: slide-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation: slide-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+@-webkit-keyframes slide-top {
+  0% {
+    -webkit-transform: translateY(100px);
+    transform: translateY(100px);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-top {
+  0% {
+    -webkit-transform: translateY(100px);
+    transform: translateY(100px);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+.feature-card:hover {
+  background: var(--black-gradient);
+  box-shadow: var(--card-shadow);
+}
+
+.feedback-container .feedback-card:last-child {
+  margin-right: 0px;
+}
+
+.feedback-card {
+  background: transparent;
+}
+
+.feedback-card:hover {
+  background: var(--black-gradient);
+}
+
+.blue__gradient {
+  background: linear-gradient(180deg, rgba(188, 165, 255, 0) 0%, #214d76 100%);
+  filter: blur(123px);
+}
+
+.pink__gradient {
+  background: linear-gradient(90deg, #f4c4f3 0%, #fc67fa 100%);
+  filter: blur(900px);
+}
+
+.white__gradient {
+  background: rgba(255, 255, 255, 0.6);
+  filter: blur(750px);
+}
+
+/* Container for the slider */
+.keen-slider {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden; /* Prevents overflow of images outside the slider */
+}
+
+/* Each slide in the slider */
+.keen-slider__slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+/* Image inside the container */
+.slider-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Default for large screens */
+}
+
+/* Navigation container */
+.navigation-wrapper {
+  position: absolute;
+  top: 50%; /* Align navigation buttons vertically */
+  width: 100%;
+  z-index: 10; /* Ensure the buttons are on top */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transform: translateY(-50%); /* Center vertically */
+  padding: 0 20px;
+}
+
+/* Styling for the arrow buttons */
+.arrow {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.5); /* Dark background for better visibility */
+  color: white;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.arrow:hover {
+  background-color: rgba(0, 0, 0, 0.7); /* Darken the button on hover */
+}
+.keen-slider__slide {
+  transition: opacity 1s ease-in-out;
+}
+
+/* Reset default margin and padding for body and html */
+/* Ensure the body and html fill the entire viewport */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%; /* Ensure it takes the full height */
+  width: 100%;  /* Ensure it takes the full width */
+  overflow-x: hidden; /* Prevent horizontal overflow if there's any unwanted space */
+}
+
+/* Responsive styles for different screen sizes */
+/* Small screens (Mobile) */
+@media (max-width: 640px) {
+  .slider-image {
+    object-fit: contain; /* Ensure image fits without cropping on small screens */
+  }
+
+  .keen-slider__slide {
+    height: 300px; /* Adjust for small screens */
+  }
+}
+.arrow {
+  width: 30px;
+  height: 30px; /* Reduce the size of arrows on small screens */
+}
+
+
+/* Medium screens (Tablets) */
+@media (min-width: 640px) and (max-width: 1024px) {
+  .slider-image {
+    object-fit: contain; /* Ensure image fits without cropping on medium screens */
+  }
+
+  .keen-slider__slide {
+    height: 500px; /* Adjust for medium screens */
+  }
+}
+
+/* Larger Medium Screens */
+@media (min-width: 1024px) and (max-width: 1280px) {
+  .slider-image {
+    object-fit: cover; /* Ensure image covers the container without stretching on larger medium screens */
+  }
+
+  .keen-slider__slide {
+    height: 70vh; /* Adjust height based on the viewport height */
+  }
+}
+
+/* Large Screens */
+@media (min-width: 1280px) {
+  .slider-image {
+    object-fit: cover; /* Ensure image covers the container without stretching on large screens */
+  }
+
+  .keen-slider__slide {
+    height: 80vh; /* Adjust height for large screens */
+  }
+}
+
+
+/* Make sure the background image covers the full viewport */
+.bg-cover {
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;  /* Optional: Keeps the background fixed when scrolling */
+}
+
+
