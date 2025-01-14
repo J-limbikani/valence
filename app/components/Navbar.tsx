@@ -19,7 +19,9 @@ const Navbar = () => {
         alt="Logo"
         width={60}        // Set a default width (this can be adjusted as needed)
         height={6}        // Set a default height (this can be adjusted as needed)
-        className="object-contain" // Ensures the logo maintains its aspect ratio
+        style={{
+          objectFit: 'fill', // Ensures the logo fills the circle without distortion
+        }}
       />
 
       {/* Navigation Links */}
